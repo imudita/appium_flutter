@@ -1,0 +1,16 @@
+{
+  "name": "appium-flutter",
+  "version": "1.0.0",
+  "description": "Appium Flutter E2E testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "appium": "^2.5.0",
+    "appium-uiautomator2-driver": "^2.45.1",
+    "webdriverio": "^8.31.1"
+  }
+}
