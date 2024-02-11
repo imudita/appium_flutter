@@ -19,6 +19,11 @@ npm i --save-dev appium
 ```shell
 npm i --save-dev webdriverio
 ```
+## Install cucumber
+```shell
+npm i --save-dev @cucumber/cucumber
+```
+
 ## Flutter `main.dart`
 Some Flutter widgets already have `semanticsLabel`, so just need to set the value of it. For instance `Text`
 ```dart
@@ -52,8 +57,9 @@ From Appium Inspector, the widgets would have `accessibility id`
 ## Sample Appium code
 So we could use the `accessibility id` on the code as per sample on `test.js`
 ```javascript
-async function runTest() {
-    const driver = await remote(wdOpts);
+    driver = await remote(wdOpts);
+
+
     // Check the text counter is '0'
     const text0 = await driver.$('~counterText0');
     await text0.isDisplayed();
@@ -62,9 +68,10 @@ async function runTest() {
     await button.click();
     // wait for text counter was changed from '0'
     await text0.waitForExist({reverse: true})
+
+
     const text1 = await driver.$('~counterText1');
     await text1.isDisplayed();
-}
 ```
 # How to run
 ## Run the following command on terminal to run Appium server

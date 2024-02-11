@@ -1,3 +1,5 @@
+const {Given, setDefaultTimeout, Then, When} = require("@cucumber/cucumber");
+
 const {remote} = require('webdriverio');
 
 const capabilities = process.env.APPIUM_OS === 'android' ? {
@@ -26,8 +28,15 @@ const wdOpts = {
     capabilities,
 };
 
-async function runTest() {
-    const driver = await remote(wdOpts);
+setDefaultTimeout(60 * 1000);
+
+let driver;
+
+Given('Open the app', {}, async () => {
+    driver = await remote(wdOpts);
+});
+
+When('Click on plus button', {}, async () => {
     // Check the text counter is '0'
     const text0 = await driver.$('~counterText0');
     await text0.isDisplayed();
@@ -35,9 +44,10 @@ async function runTest() {
     const button = await driver.$('~incrementButton');
     await button.click();
     // wait for text counter was changed from '0'
-    await text0.waitForExist({reverse: true})
+    await text0.waitForExist({reverse: true});
+});
+
+Then('The value increase', {}, async () => {
     const text1 = await driver.$('~counterText1');
     await text1.isDisplayed();
-}
-
-runTest().catch(console.error);
+});
