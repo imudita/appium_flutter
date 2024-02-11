@@ -7,7 +7,7 @@ const capabilities = process.env.APPIUM_OS === 'android' ? {
     // 'appium:app': __dirname + '/../apps/app-debug.apk',
     'appium:appPackage': 'com.example.appium_flutter',
     'appium:appActivity': '.MainActivity',
-    'appium:noReset': true,
+    // 'appium:noReset': true,
 } : process.env.APPIUM_OS === 'ios' ? {
     'platformName': 'iOS',
     'appium:automationName': 'XCUITest',
@@ -16,7 +16,7 @@ const capabilities = process.env.APPIUM_OS === 'android' ? {
     'appium:udid': '7E9C6AA8-0276-45D3-A55E-FC970D41A668',
     // 'appium:app': __dirname + '/../apps/Runner.zip',
     'appium:bundleId': 'com.example.appiumFlutter',
-    'appium:noReset': true,
+    // 'appium:noReset': true,
 } : {};
 
 const wdOpts = {
