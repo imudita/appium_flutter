@@ -7,9 +7,13 @@ npm init
 ```shell
 npm i --save-dev appium
 ```
-## Install the UiAutomator2 Driver
+## Install the UiAutomator2 Driver for Android
 ```shell
 ./node_modules/.bin/appium driver install uiautomator2
+```
+## Install the XCUITest Driver for iOS
+```shell
+./node_modules/.bin/appium driver install xcuitest
 ```
 ## Install webdriverio an Appium-compatible client library
 ```shell
@@ -36,11 +40,15 @@ Some others do not have it, so need to wrap it with `Semantics` widget:
        ),
 ```
 ## Appium Inspector
-From Appium Inspector, the widget would have `accessibility id`
+From Appium Inspector, the widgets would have `accessibility id`
+### from Android emulator
 ![counterText](./img/counterText.jpg)
 
 ![incrementButton](./img/incrementButton.jpg)
+### from iOS simulator
+![counterText](./img/iosText.jpg)
 
+![incrementButton](./img/iosButton.jpg)
 ## Sample Appium code
 So we could use the `accessibility id` on the code as per sample on `test.js`
 ```javascript
@@ -57,4 +65,20 @@ async function runTest() {
     const text1 = await driver.$('~counterText1');
     await text1.isDisplayed();
 }
+```
+# How to run
+## Run the following command on terminal to run Appium server
+```shell
+npm run appium
+```
+## Open new terminal, then run the following command to run the test script:
+### For Android
+note: make sure your Android emulator is already running, and the flutter application already installed on Android emulator
+```shell
+npm run android
+```
+### For iOS
+note: make sure your iOS simulator is already running, and the flutter application already installed on iOS simulator
+```shell
+npm run iOS
 ```
