@@ -2,9 +2,11 @@ import {config} from './wdio.conf.ts';
 
 config.capabilities = [{
     platformName: 'Android',
-    browserName: 'Chrome',
+    'appium:automationName': 'UiAutomator2',
     'appium:deviceName': 'Pixel_7_API_34',
-    'appium:automationName': 'UiAutomator2'
+    // 'appium:app': '/../apps/app-debug.apk',
+    'appium:appPackage': 'com.example.appium_flutter',
+    'appium:appActivity': '.MainActivity',
 }];
 
 export {config};
