@@ -1,0 +1,25 @@
+{
+  "name": "wdio",
+  "type": "module",
+  "engines": {
+    "node": "22.14.0",
+    "npm": "10.9.2"
+  },
+  "devDependencies": {
+    "@wdio/appium-service": "^9.19.1",
+    "@wdio/cli": "^9.19.1",
+    "@wdio/cucumber-framework": "^9.19.1",
+    "@wdio/local-runner": "^9.19.1",
+    "@wdio/spec-reporter": "^9.19.1",
+    "appium": "^2.19.0",
+    "appium-uiautomator2-driver": "^4.2.9",
+    "appium-xcuitest-driver": "^9.10.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "wdio-wait-for": "^3.1.0"
+  },
+  "scripts": {
+    "android": "wdio run config/wdio_android.conf.ts",
+    "ios": "wdio run config/wdio_ios.conf.ts"
+  }
+}
